@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Missile Defense UI</title>
+        <style>
+            #page_title {
+                font-weight: bold;
+                font-size: 60px;
+                color: rgb(198,0,0);
+            }
+            #option_1 {
+                background-color: rgb(13,226,34);
+                color: rgb(255,255,255);
+                font-size: 58px;
+            }
+            #option_2 {
+                background-color: rgb(255,0,0);
+                color: rgb(255,255,255);
+                font-size: 50px;
+            }
+            #option_1_button {
+                font-size: 58px;
+                background-color: rgb(13,226,34);
+                color: rgb(255,255,255);
+            }
+            #option_2_button {
+                font-size: 50px;
+                background-color: rgb(255,0,0);
+                color: rgb(255,255,255);
+            }
+        </style>
+        <script>
+            var siren = new Audio();
+            siren.src = 'alarm_sound.wav';
+
+            var false_alarm = new Audio();
+            false_alarm.src = 'false_alarm.wav';
+
+        </script>
+        
+    </head>
+    <body>
+
+        <div align="center">
+            <h1 id="page_title">Missile Defense UI</h1>
+        </div>
+
+        <details>
+            <div align="center">
+                <h4>(Shitting on the Hawaiian Government)</h4>
+            </div>
+        </details>
+
+        <hr>
+
+        <div align="center">
+            <h1>Missile Defense</h1>
+        </div>
+
+        <div align="center">
+            <table border="1" cellpadding="30" class="options">
+                <tr>
+                    <td id="option_1"><div align="center"><button type="button" id="option_1_button">False <br>Alarm</button></div></td>
+                    <td id="option_2"><div align="center"><button type="button" id="option_2_button">Actual <br>Fucking <br> Missile <br> Warning</button></td>
+                    <script type="text/javascript">
+                        document.getElementById("option_2_button").onclick = function click(){
+                            var val = confirm("Are you SURE you want to activate the real missile warning?");
+                        if(val == true){
+                            siren.play()
+                            alert("Activating real missile warning.");
+                        } else {
+                            alert("Real missile warning cancelled.");
+                        }
+                        }
+                    </script>
+                    <script>
+                        document.getElementById("option_1_button").onclick = function click(){
+                            var val = confirm("Are you SURE you want to activate the false missile alarm.");
+                        if(val == true){
+                            false_alarm.play()
+                            alert("Activating false missile alarm.");
+                        } else {
+                            alert("False missile alarm cancelled.");
+                        }
+                        }
+                    </script>
+                </tr>
+            </table>
+        </div>
+
+    </body>
+</html>
